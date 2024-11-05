@@ -7,7 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="360,78,104,133" IsEnabled="False"/>
+        <ListBox x:Name="ListBox1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="360,78,104,133" IsEnabled="False" SelectionChanged="ListBox_SelectionChanged"/>
+        <Button Content="Load CSV" HorizontalAlignment="Left" Margin="221,161,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <StatusBar Margin="0,389,0,0">
+            <TextBlock x:Name="statusBarText"/>
+        </StatusBar>
 
     </Grid>
 </Window>
