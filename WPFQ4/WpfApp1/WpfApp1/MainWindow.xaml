@@ -7,11 +7,30 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <ListBox x:Name="ListBox1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="360,78,104,133" IsEnabled="False" SelectionChanged="ListBox_SelectionChanged"/>
-        <Button Content="Load CSV" HorizontalAlignment="Left" Margin="221,161,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <ListBox x:Name="ListBoxReadOnly" Margin="26,50,438,161" IsEnabled="True">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Key}" Margin="5" />
+                        <TextBlock Text="{Binding Value}" Margin="5" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
         <StatusBar Margin="0,389,0,0">
             <TextBlock x:Name="statusBarText"/>
         </StatusBar>
-
+        <ListBox x:Name="ListBoxSelectable" Margin="431,50,33,161" IsEnabled="True">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Key}" Margin="5" />
+                        <TextBlock Text="{Binding Value}" Margin="5" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Label Content="Filter Staff by: " HorizontalAlignment="Left" Margin="26,322,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="FilterText" HorizontalAlignment="Left" Margin="116,326,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Window>

@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "50NfeyJacHpbyQqfBMJFRajPtpt1bBH6+vPm6+HkEWs52jq2fNEOF0MH2ZiYtWRSgGinT0p5YaX0K+n2uM4kSw==",
+  "dgSpecHash": "/xqD/bPTe2c=",
   "success": true,
-  "projectFilePath": "C:\\Users\\30074191\\Documents\\GitHub\\MalinAT3\\WPFQ4\\WpfApp1\\WpfApp1\\WpfApp1.csproj",
+  "projectFilePath": "C:\\Users\\noawa\\Documents\\GitHub\\MalinAT3\\WPFQ4\\WpfApp1\\WpfApp1\\WpfApp1.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\30074191\\.nuget\\packages\\csvhelper\\33.0.1\\csvhelper.33.0.1.nupkg.sha512"
+    "C:\\Users\\noawa\\.nuget\\packages\\csvhelper\\33.0.1\\csvhelper.33.0.1.nupkg.sha512"
   ],
   "logs": []
 }

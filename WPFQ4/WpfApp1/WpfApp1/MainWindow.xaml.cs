@@ -13,6 +13,7 @@ using System.Windows.Media.Media3D;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CsvHelper;
+using System.Linq;
 
 namespace WpfApp1
 {
@@ -26,6 +27,9 @@ namespace WpfApp1
             InitializeComponent();
             // call ReadCSV file when the GUI loads per 4.2 assessment requirements, set missingFieldFound to null as what the exception suggested
             readCSV();
+            // load dictionary into the read only listbox on start up per 4.3 assessment requirements
+            displayDictionary();
+            filterStaff();
         }
 
         // 4.1 Create a Dictionary data structure with a TKey of type integer and a TValue of type string, name the new data structure “MasterFile”. 
@@ -71,21 +75,25 @@ namespace WpfApp1
         private void displayDictionary()
         {
             // clear items in the listbox
-            ListBox1.Items.Clear();
+            ListBoxReadOnly.Items.Clear();
 
-            ListBox1.Items.Add();
-
-
+            // Set ItemsSource to the dictionary (masterFile) to load the csv data stored in the dictionary to the listbox
+            ListBoxReadOnly.ItemsSource = MasterFile;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        /*
+         * 4.4
+        * Create a method to filter the Staff Name data from the Dictionary into a second filtered and selectable list box. 
+        * This method must use a text box input and update as each character is entered.
+        * The list box must reflect the filtered data in real time. 
+        */
+        private void filterStaff()
         {
-          
-        }
-
-        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            displayDictionary(); // call displayDictionary method
+            foreach (var name in MasterFile.OrderBy(name => name.Value))
+            {
+                // ensure only name.Value is added as we want to filter Staff Name not the number on the left
+                //ListBoxSelectable.ItemsSource = name;
+            }
         }
     }
 }
