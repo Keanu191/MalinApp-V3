@@ -14,6 +14,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CsvHelper;
 using System.Linq;
+using System.Data;
+using System.Collections.ObjectModel;
+
 
 namespace WpfApp1
 {
@@ -29,12 +32,14 @@ namespace WpfApp1
             readCSV();
             // load dictionary into the read only listbox on start up per 4.3 assessment requirements
             displayDictionary();
-            filterStaff();
+            // represent parameter string as the searchInput textbox
+            filterStaff(searchInput.Text);
         }
 
         // 4.1 Create a Dictionary data structure with a TKey of type integer and a TValue of type string, name the new data structure “MasterFile”. 
         Dictionary<int, string> MasterFile = new Dictionary<int, string>();
 
+        
 
         // 4.2 Create a method that will read the data from the .csv file into the Dictionary data structure when the GUI loads.          
         private void readCSV()
@@ -69,31 +74,92 @@ namespace WpfApp1
             }
         }
 
+        
+
         /*
          * 4.3 Create a method to display the Dictionary data into a non-selectable display only list box (ie read only). 
          */
         private void displayDictionary()
         {
-            // clear items in the listbox
+            // clear items in the listboxes
             ListBoxReadOnly.Items.Clear();
+            ListBoxSelectable.Items.Clear();
 
-            // Set ItemsSource to the dictionary (masterFile) to load the csv data stored in the dictionary to the listbox
+            // Set ItemsSource to the dictionary
             ListBoxReadOnly.ItemsSource = MasterFile;
+            ListBoxSelectable.ItemsSource = MasterFile;
         }
 
         /*
          * 4.4
-        * Create a method to filter the Staff Name data from the Dictionary into a second filtered and selectable list box. 
-        * This method must use a text box input and update as each character is entered.
-        * The list box must reflect the filtered data in real time. 
+         * Create a method to filter the Staff Name data from the Dictionary into a second filtered and selectable list box. 
+         * This method must use a text box input and update as each character is entered.
+         * The list box must reflect the filtered data in real time. 
+         * 
+         *  4.5
+         * Create a method to filter the Staff ID data from the Dictionary into the second filtered and selectable list box.
+         * This method must use a text box input and update as each number is entered.
+         * The list box must reflect the filtered data in real time. 
         */
-        private void filterStaff()
+
+    
+        private void filterStaff(string staffSearch)
         {
-            foreach (var name in MasterFile.OrderBy(name => name.Value))
-            {
-                // ensure only name.Value is added as we want to filter Staff Name not the number on the left
-                //ListBoxSelectable.ItemsSource = name;
+            // call displayDictionary method
+            displayDictionary();
+
+            // set parameter string to searchInput.Text and convert the users textbox input to lowercase to prevent any issues with case sensitity if it arrises  
+            staffSearch = searchInput.Text.ToLower();
+
+            // clear listbox items
+            ListBoxSelectable.Items.Clear();
+
+            // Staff ID set as int
+            int idInput;
+
+            // Create a bool that Attempts to Parse an integer typed into the textbox to see whether the user is searching for the Staff ID or the Staff name
+            bool intEntered = int.TryParse(staffSearch, out idInput);
+            
+            // ensure KeyValuePair Key/Value matches with the variables of the dictionary with the Key being int and string being the value
+            foreach (KeyValuePair<int, string> kvp in MasterFile)
+            { 
+                if (intEntered == true && kvp.Key == int.Parse(staffSearch))
+                {
+                    // if the textbox input is an int, see if the key/value matches the search result
+                    if (kvp.Key == idInput)
+                    {
+                        // show the Key and Value for the search result
+                        ListBoxSelectable.Items.Add(kvp.Key + ": " + kvp.Value);
+                        statusBarText.Text = "The following Staff ID was found! : " + staffSearch;
+                    }
+                    else
+                    {
+                        statusBarText.Text = "The following Staff ID could not be found! : " + staffSearch;
+                    }
+
+                }
+                else
+                {
+                    // now dealing with the actual Staff Names
+
+                    // if the name in the dictionary contains whats in the search textbox then display results
+                    if (kvp.Value.ToLower().Contains(staffSearch))
+                    {
+                        // show the Key and Value for the search result
+                        ListBoxSelectable.Items.Add(kvp.Key + ": " + kvp.Value);
+                        statusBarText.Text = "The following Staff Name was found! : " + staffSearch;
+                    }
+                    else
+                    {
+                        statusBarText.Text = "The following Staff Name could not be found! : " + staffSearch;
+                    }
+                }
             }
+        }
+
+        private void searchInput_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            filterStaff(searchInput.Text);
         }
     }
 }
