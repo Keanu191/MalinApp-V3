@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\noawa\\Documents\\GitHub\\MalinAT3\\WPFQ4\\WpfApp1\\",
+  "WorkspaceRootPath": "C:\\Users\\30074191\\Documents\\GitHub\\MalinAT3\\WPFQ4\\WpfApp1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{072E8664-0EE5-49CB-9866-748E0379D3EF}|WpfApp1\\WpfApp1.csproj|c:\\users\\noawa\\documents\\github\\malinat3\\wpfq4\\wpfapp1\\wpfapp1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{072E8664-0EE5-49CB-9866-748E0379D3EF}|WpfApp1\\WpfApp1.csproj|c:\\users\\30074191\\documents\\github\\malinat3\\wpfq4\\wpfapp1\\wpfapp1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{072E8664-0EE5-49CB-9866-748E0379D3EF}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{072E8664-0EE5-49CB-9866-748E0379D3EF}|WpfApp1\\WpfApp1.csproj|c:\\users\\noawa\\documents\\github\\malinat3\\wpfq4\\wpfapp1\\wpfapp1\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{072E8664-0EE5-49CB-9866-748E0379D3EF}|WpfApp1\\WpfApp1.csproj|c:\\users\\30074191\\documents\\github\\malinat3\\wpfq4\\wpfapp1\\wpfapp1\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{072E8664-0EE5-49CB-9866-748E0379D3EF}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
@@ -18,20 +18,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 12,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
@@ -43,6 +31,30 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Bookmark",
@@ -60,11 +72,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\noawa\\Documents\\GitHub\\MalinAT3\\WPFQ4\\WpfApp1\\WpfApp1\\MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\30074191\\Documents\\GitHub\\MalinAT3\\WPFQ4\\WpfApp1\\WpfApp1\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "WpfApp1\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\noawa\\Documents\\GitHub\\MalinAT3\\WPFQ4\\WpfApp1\\WpfApp1\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\30074191\\Documents\\GitHub\\MalinAT3\\WPFQ4\\WpfApp1\\WpfApp1\\MainWindow.xaml.cs",
               "RelativeToolTip": "WpfApp1\\MainWindow.xaml.cs",
-              "ViewState": "AQIAAI0AAAAAAAAAAAAowJMAAABHAAAA",
+              "ViewState": "AgIAAKYAAAAAAAAAAAAiwLQAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-11T10:50:54.646Z",
               "EditorCaption": ""
@@ -73,9 +85,9 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\noawa\\Documents\\GitHub\\MalinAT3\\WPFQ4\\WpfApp1\\WpfApp1\\MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\30074191\\Documents\\GitHub\\MalinAT3\\WPFQ4\\WpfApp1\\WpfApp1\\MainWindow.xaml",
               "RelativeDocumentMoniker": "WpfApp1\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\noawa\\Documents\\GitHub\\MalinAT3\\WPFQ4\\WpfApp1\\WpfApp1\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\30074191\\Documents\\GitHub\\MalinAT3\\WPFQ4\\WpfApp1\\WpfApp1\\MainWindow.xaml",
               "RelativeToolTip": "WpfApp1\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-11-04T13:03:06.88Z",

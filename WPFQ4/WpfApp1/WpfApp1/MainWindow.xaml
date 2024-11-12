@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <ListBox x:Name="ListBoxReadOnly" Margin="26,50,438,161" IsEnabled="True">
+        <ListBox x:Name="ListBoxReadOnly" Margin="26,50,438,161" IsEnabled="True" SelectionChanged="ListBoxReadOnly_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -20,7 +20,7 @@
         <StatusBar Margin="0,389,0,0">
             <TextBlock x:Name="statusBarText"/>
         </StatusBar>
-        <ListBox x:Name="ListBoxSelectable" Margin="431,50,33,161" IsEnabled="True">
+        <ListBox x:Name="ListBoxSelectable" Margin="431,50,33,161" IsEnabled="True" SelectionChanged="ListBoxSelectable_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">

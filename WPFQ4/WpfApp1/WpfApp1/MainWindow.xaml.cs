@@ -12,7 +12,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Media.Media3D;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using CsvHelper;
 using System.Linq;
 using System.Data;
 using System.Collections.ObjectModel;
@@ -30,7 +29,7 @@ namespace WpfApp1
             InitializeComponent();
             // call ReadCSV file when the GUI loads per 4.2 assessment requirements, set missingFieldFound to null as what the exception suggested
             readCSV();
-            // load dictionary into the read only listbox on start up per 4.3 assessment requirements
+            // load dictionary into the listboxes on start up per 4.3 assessment requirements
             displayDictionary();
             // represent parameter string as the searchInput textbox
             filterStaff(searchInput.Text);
@@ -39,8 +38,14 @@ namespace WpfApp1
         // 4.1 Create a Dictionary data structure with a TKey of type integer and a TValue of type string, name the new data structure “MasterFile”. 
         Dictionary<int, string> MasterFile = new Dictionary<int, string>();
 
-        
+        /* 12/11/2024
+         * Create an observable collection to replace the dictionary itself when trying to clear items in a listbox as I get this exception relating to the ItemsSource:
+         * System.InvalidOperationException: 'Operation is not valid while ItemsSource is in use. Access and modify elements with ItemsControl.ItemsSource instead.'
+        */
 
+        ObservableCollection<KeyValuePair<int, string>> dictionaryDisplay = new ObservableCollection<KeyValuePair<int, string>>();
+
+         
         // 4.2 Create a method that will read the data from the .csv file into the Dictionary data structure when the GUI loads.          
         private void readCSV()
         { 
@@ -60,7 +65,7 @@ namespace WpfApp1
                         string s = values[0];
                         string t = values[1];
                         // due to the dictionary being formatted of int, string, we will have to parse S to represent the integer
-                        MasterFile.Add(int.Parse(s), t);
+                        MasterFile.Add(int.Parse(s), t);;
 
                         // display success message
                         statusBarText.Text = "The CSV file has been loaded successfully!";
@@ -81,15 +86,28 @@ namespace WpfApp1
          */
         private void displayDictionary()
         {
-            // clear items in the listboxes
-            ListBoxReadOnly.Items.Clear();
-            ListBoxSelectable.Items.Clear();
+            // clear items in the listbox
+            ListBoxReadOnly.ClearValue(ItemsControl.ItemsSourceProperty);
+            ListBoxSelectable.ClearValue(ItemsControl.ItemsSourceProperty);
 
-            // Set ItemsSource to the dictionary
-            ListBoxReadOnly.ItemsSource = MasterFile;
-            ListBoxSelectable.ItemsSource = MasterFile;
+
+            // initalise the contents of the dictionary, to the observed collection (dictionary display)
+            for (int i = 0; i < MasterFile.Values.Count; i++)
+                dictionaryDisplay.Add(MasterFile.ElementAt(i));
+
+            // Set ListBoxReadOnly/ListBoxSelectable ItemsSource to the dictionary
+            ListBoxReadOnly.ItemsSource = dictionaryDisplay;
+            ListBoxSelectable.ItemsSource = dictionaryDisplay;
+
+            /*
+             * Debugging notes:
+             * When I set a breakpoint to ListBoxReadOnly.ItemsSource the Items.Count is 9926 which is about right 
+             * but for the second listbox (the selectable listbox), the Items.Count is 0. On top of that there is cells but
+             * they are empty!
+             */
         }
 
+       
         /*
          * 4.4
          * Create a method to filter the Staff Name data from the Dictionary into a second filtered and selectable list box. 
@@ -105,14 +123,23 @@ namespace WpfApp1
     
         private void filterStaff(string staffSearch)
         {
-            // call displayDictionary method
-            displayDictionary();
+
+            /* Issue, the 2nd selectable listbox in my WPF application has empty cells
+             * although the code remains the same for the other listbox which successfully loads the csv file
+             * I set the ItemsSource for this listbox to the dictionary (MasterFile) 
+             * When I set a breakpoint on the ListBoxSelectable.Items.Add(kvp.Key + ": " + kvp.Value);
+             * the csv data successfully shows in the locals tab (kvp variable) 
+             */
+
+            //ListBoxSelectable.ClearValue(ItemsControl.ItemsSourceProperty);
+
+            //ListBoxSelectable.ItemsSource = dictionaryDisplay;
 
             // set parameter string to searchInput.Text and convert the users textbox input to lowercase to prevent any issues with case sensitity if it arrises  
             staffSearch = searchInput.Text.ToLower();
 
             // clear listbox items
-            ListBoxSelectable.Items.Clear();
+            ListBoxSelectable.ClearValue(ItemsControl.ItemsSourceProperty);
 
             // Staff ID set as int
             int idInput;
@@ -121,7 +148,7 @@ namespace WpfApp1
             bool intEntered = int.TryParse(staffSearch, out idInput);
             
             // ensure KeyValuePair Key/Value matches with the variables of the dictionary with the Key being int and string being the value
-            foreach (KeyValuePair<int, string> kvp in MasterFile)
+            foreach (var kvp in dictionaryDisplay)
             { 
                 if (intEntered == true && kvp.Key == int.Parse(staffSearch))
                 {
@@ -160,6 +187,16 @@ namespace WpfApp1
         private void searchInput_TextChanged(object sender, TextChangedEventArgs e)
         {
             filterStaff(searchInput.Text);
+        }
+
+        private void ListBoxReadOnly_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void ListBoxSelectable_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
