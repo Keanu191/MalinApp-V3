@@ -6,8 +6,13 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <ListBox x:Name="ListBoxReadOnly" Margin="26,50,438,161" IsEnabled="True" SelectionChanged="ListBoxReadOnly_SelectionChanged">
+    <Grid KeyDown="Grid_KeyDown">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="17*"/>
+            <ColumnDefinition Width="783*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox x:Name="ListBoxReadOnly" Margin="9,50,438,161" IsEnabled="True" Grid.Column="2" SelectionChanged="ListBoxReadOnly_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -17,10 +22,10 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <StatusBar Margin="0,389,0,0">
+        <StatusBar Margin="0,389,0,0" Grid.ColumnSpan="3">
             <TextBlock x:Name="statusBarText"/>
         </StatusBar>
-        <ListBox x:Name="ListBoxSelectable" Margin="431,50,33,161" IsEnabled="True" SelectionChanged="ListBoxSelectable_SelectionChanged">
+        <ListBox x:Name="ListBoxSelectable" Margin="414,50,33,161" IsEnabled="True" Grid.Column="2" SelectionChanged="ListBoxSelectable_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -30,7 +35,9 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Label Content="Filter Staff by name/ID: " HorizontalAlignment="Left" Margin="431,278,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="searchInput" HorizontalAlignment="Left" Margin="565,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="searchInput_TextChanged"/>
+        <Label Content="Filter Staff by name: " HorizontalAlignment="Left" Margin="414,278,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+        <TextBox Name="searchInput" HorizontalAlignment="Left" Margin="548,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="searchInput_TextChanged" Grid.Column="2"/>
+        <Label Content="Filter Staff by ID:" HorizontalAlignment="Left" Margin="414,328,0,0" VerticalAlignment="Top" Grid.Column="2"/>
+        <TextBox Name="searchID" HorizontalAlignment="Left" Margin="548,332,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="searchID_TextChanged" Grid.Column="2" PreviewTextInput="searchID_PreviewTextInput"/>
     </Grid>
 </Window>

@@ -15,6 +15,8 @@ using System.Windows.Shapes;
 using System.Linq;
 using System.Data;
 using System.Collections.ObjectModel;
+using System.Text.RegularExpressions;
+using System.Windows.Controls.Primitives;
 
 
 namespace WpfApp1
@@ -31,8 +33,13 @@ namespace WpfApp1
             readCSV();
             // load dictionary into the listboxes on start up per 4.3 assessment requirements
             displayDictionary();
-            // represent parameter string as the searchInput textbox
-            filterStaff(searchInput.Text);
+            // represent parameter string as the searchInput textbox for staff name search
+            filterStaffByName(searchInput.Text);
+            // represent parameter string as searchID textbox for staff Id search
+            filterStaffByID(searchID.Text);
+            this.KeyDown += Grid_KeyDown;
+            populateTextBox();
+
         }
 
         // 4.1 Create a Dictionary data structure with a TKey of type integer and a TValue of type string, name the new data structure “MasterFile”. 
@@ -43,6 +50,10 @@ namespace WpfApp1
          * System.InvalidOperationException: 'Operation is not valid while ItemsSource is in use. Access and modify elements with ItemsControl.ItemsSource instead.'
         */
 
+        /*
+         * 15/11/2024
+         * NOTE TO SELF: MAKE SURE FOR ANY KEYBOARD BUTTON PRESS METHOD TO CALL IT IN THE GRID_KEYDOWN METHOD NOT THE MAINWINDOW!
+         */
         ObservableCollection<KeyValuePair<int, string>> dictionaryDisplay = new ObservableCollection<KeyValuePair<int, string>>();
 
          
@@ -86,25 +97,14 @@ namespace WpfApp1
          */
         private void displayDictionary()
         {
-            // clear items in the listbox
+            // clear items in the readonly listbox
             ListBoxReadOnly.ClearValue(ItemsControl.ItemsSourceProperty);
-            ListBoxSelectable.ClearValue(ItemsControl.ItemsSourceProperty);
+           
 
+            // Set ListBoxReadOnly Items source to masterfile as nothing will be changed there 
+            ListBoxReadOnly.ItemsSource = MasterFile;
+          
 
-            // initalise the contents of the dictionary, to the observed collection (dictionary display)
-            for (int i = 0; i < MasterFile.Values.Count; i++)
-                dictionaryDisplay.Add(MasterFile.ElementAt(i));
-
-            // Set ListBoxReadOnly/ListBoxSelectable ItemsSource to the dictionary
-            ListBoxReadOnly.ItemsSource = dictionaryDisplay;
-            ListBoxSelectable.ItemsSource = dictionaryDisplay;
-
-            /*
-             * Debugging notes:
-             * When I set a breakpoint to ListBoxReadOnly.ItemsSource the Items.Count is 9926 which is about right 
-             * but for the second listbox (the selectable listbox), the Items.Count is 0. On top of that there is cells but
-             * they are empty!
-             */
         }
 
        
@@ -113,90 +113,251 @@ namespace WpfApp1
          * Create a method to filter the Staff Name data from the Dictionary into a second filtered and selectable list box. 
          * This method must use a text box input and update as each character is entered.
          * The list box must reflect the filtered data in real time. 
-         * 
+        */
+
+        private void filterStaffByName(string staffSearch)
+        {
+           // set parameter string to searchInput.Text and convert the users textbox input to lowercase to prevent any issues with case sensitity if it arrises  
+           staffSearch = searchInput.Text.ToLower();
+            
+           // clear the observable collection
+           dictionaryDisplay.Clear();
+
+            // loop through the dictionary to find matchign entires
+            foreach (var kvp in MasterFile)
+            { 
+                // if the name in the dictionary contains whats in the search textbox then display results
+                if (kvp.Value.ToLower().Contains(staffSearch))
+                {
+                    // show the Key and Value for the search result
+                    dictionaryDisplay.Add(new KeyValuePair<int, string>(kvp.Key, kvp.Value));
+                    ListBoxSelectable.ScrollIntoView(kvp.Value);
+                    statusBarText.Text = $"The following Staff Name was found! : {staffSearch}";
+                } 
+            }
+
+            // If no items matched the search term, update the status bar text.
+            if (dictionaryDisplay.Count == 0)
+            {
+                statusBarText.Text = $"The following Staff Name could not be found! : {staffSearch}";
+            }
+
+            // Update the ListBox's ItemsSource to the filtered collection.
+            ListBoxSelectable.ItemsSource = dictionaryDisplay;
+        }
+
+        /*
          *  4.5
          * Create a method to filter the Staff ID data from the Dictionary into the second filtered and selectable list box.
          * This method must use a text box input and update as each number is entered.
          * The list box must reflect the filtered data in real time. 
-        */
+         */
 
-    
-        private void filterStaff(string staffSearch)
+        private void filterStaffByID(string idSearch)
         {
+            // set parameter string to searchID.Text  
+            idSearch = searchID.Text;
 
-            /* Issue, the 2nd selectable listbox in my WPF application has empty cells
-             * although the code remains the same for the other listbox which successfully loads the csv file
-             * I set the ItemsSource for this listbox to the dictionary (MasterFile) 
-             * When I set a breakpoint on the ListBoxSelectable.Items.Add(kvp.Key + ": " + kvp.Value);
-             * the csv data successfully shows in the locals tab (kvp variable) 
-             */
-
-            //ListBoxSelectable.ClearValue(ItemsControl.ItemsSourceProperty);
-
-            //ListBoxSelectable.ItemsSource = dictionaryDisplay;
-
-            // set parameter string to searchInput.Text and convert the users textbox input to lowercase to prevent any issues with case sensitity if it arrises  
-            staffSearch = searchInput.Text.ToLower();
-
-            // clear listbox items
-            ListBoxSelectable.ClearValue(ItemsControl.ItemsSourceProperty);
+            // clear the observable collection
+            dictionaryDisplay.Clear();
 
             // Staff ID set as int
             int idInput;
 
             // Create a bool that Attempts to Parse an integer typed into the textbox to see whether the user is searching for the Staff ID or the Staff name
-            bool intEntered = int.TryParse(staffSearch, out idInput);
-            
-            // ensure KeyValuePair Key/Value matches with the variables of the dictionary with the Key being int and string being the value
-            foreach (var kvp in dictionaryDisplay)
-            { 
-                if (intEntered == true && kvp.Key == int.Parse(staffSearch))
-                {
-                    // if the textbox input is an int, see if the key/value matches the search result
-                    if (kvp.Key == idInput)
-                    {
-                        // show the Key and Value for the search result
-                        ListBoxSelectable.Items.Add(kvp.Key + ": " + kvp.Value);
-                        statusBarText.Text = "The following Staff ID was found! : " + staffSearch;
-                    }
-                    else
-                    {
-                        statusBarText.Text = "The following Staff ID could not be found! : " + staffSearch;
-                    }
+            bool intEntered = int.TryParse(idSearch, out idInput);
 
-                }
-                else
-                {
-                    // now dealing with the actual Staff Names
 
-                    // if the name in the dictionary contains whats in the search textbox then display results
-                    if (kvp.Value.ToLower().Contains(staffSearch))
-                    {
-                        // show the Key and Value for the search result
-                        ListBoxSelectable.Items.Add(kvp.Key + ": " + kvp.Value);
-                        statusBarText.Text = "The following Staff Name was found! : " + staffSearch;
-                    }
-                    else
-                    {
-                        statusBarText.Text = "The following Staff Name could not be found! : " + staffSearch;
-                    }
+            // loop through the dictionary to find matchign entires
+            foreach (var kvp in MasterFile)
+            {
+                // if the name in the dictionary contains whats in the search textbox then display results
+                if (kvp.Key.ToString().Contains(idSearch))
+                {
+                    // show the Key and Value for the search result
+                    dictionaryDisplay.Add(new KeyValuePair<int, string>(kvp.Key, kvp.Value));
+                    ListBoxSelectable.ScrollIntoView(kvp.Key);
+                    statusBarText.Text = $"The following Staff ID was found! : {idSearch}";
                 }
             }
+
+            // If no items matched the search term, update the status bar text.
+            if (dictionaryDisplay.Count == 0)
+            {
+                statusBarText.Text = $"The following Staff ID could not be found! : {idSearch}";
+            }
+
+            // Update the ListBox's ItemsSource to the filtered collection.
+            ListBoxSelectable.ItemsSource = dictionaryDisplay;
         }
 
+        /*
+         * 4.6 
+         * Create a method for the Staff Name text box which will clear the contents and place the focus into the Staff Name text box. Utilise a keyboard shortcut. 
+         * 
+         * 
+         * The keyboard combination to do this is: Delete + Enter
+         * (this would be the delete underneath the insert button on the keyboard)
+         */
+
+        private void clearStaffName()
+        {
+            // Check if the Delete key and Enter Key are pressed at the same time
+            if (Keyboard.IsKeyDown(Key.Enter) && Keyboard.IsKeyDown(Key.Delete))
+            {
+               // clear the staff name textboxes contents
+               searchInput.Clear();
+
+               // place focus into the staff name textbox
+               searchInput.Focus();
+
+               // display confirmation message in status bar that the staff's name textbox has been successfully cleared
+               statusBarText.Text = "The staff name textbox has been cleared!";
+            }
+
+            return;
+        }
+
+        /*
+         * 4.7
+         * Create a method for the Staff ID text box which will clear the contents and place the focus into the text box. Utilise a keyboard shortcut. 
+         * 
+         * The keyboard combination to do this is: Delete + Left Shift
+         * (this would be the delete underneath the insert button on the keyboard)
+         */
+
+        private void clearStaffID()
+        {
+            // Check if the Delete key and Left Shift Key are pressed at the same time
+            if (Keyboard.IsKeyDown(Key.LeftShift) && Keyboard.IsKeyDown(Key.Delete))
+            {
+                // clear the staff name textboxes contents
+                searchID.Clear();
+
+                // place focus into the staff name textbox
+                searchID.Focus();
+
+                // display confirmation message in status bar that the staff's name textbox has been successfully cleared
+                statusBarText.Text = "The staff ID textbox has been cleared!";
+            }
+
+            return;
+        }
+
+        /*
+         * 4.8
+         * Create a method for the filtered and selectable list box which will populate the two text boxes when a staff record is selected. Utilise the Tab and keyboard keys.
+         * 
+         * keyboard combination is Tab + Left Shift and then select any item in the listbox
+         */
+
+        private void populateTextBox()
+        {
+            if (Keyboard.IsKeyDown(Key.Tab) && Keyboard.IsKeyDown(Key.LeftShift))
+            {
+                // for ReadOnly Listbox
+                // if the selected item in the listbox exists
+                if (ListBoxReadOnly.SelectedItem != null)
+                {
+                    // initalise the selected item as a kvp of type int string like the dictionary then assign
+                    var selectedItem = (KeyValuePair<int, string>)ListBoxReadOnly.SelectedItem; // Assign the ID to the first TextBox
+                    searchID.Text = selectedItem.Key.ToString(); // Assign the name to the second TextBox
+                    searchInput.Text = selectedItem.Value;
+                }
+
+                // for Selectable Listbox
+                // if the selected item in the listbox exists
+                if (ListBoxSelectable.SelectedItem != null)
+                {
+                    // initalise the selected item as a kvp of type int string like the dictionary then assign
+                    var selectedItem = (KeyValuePair<int, string>)ListBoxSelectable.SelectedItem; // Assign the ID to the first TextBox
+                    searchID.Text = selectedItem.Key.ToString(); // Assign the name to the second TextBox
+                    searchInput.Text = selectedItem.Value;
+                }
+            }
+
+               
+        }
+
+        /*
+         * 4.9
+         * Create a method that will open the Admin GUI when the Alt + A keys are pressed.
+         * Ensure the General GUI sends the currently selected Staff ID and Staff Name to the Admin GUI for Update and Delete purposes and is opened as modal.
+         * Create modified logic to open the Admin GUI to Create a new user when the Staff ID 77 and the Staff Name is empty.
+         * Read the appropriate criteria in the Admin GUI for further information. 
+         */
+
+        private void openGUI()
+        {
+
+            if (ListBoxReadOnly.SelectedItem == null)
+            {
+                statusBarText.Text = "Error: Cannot open Admin GUI, an item in the read only listbox must be selected!";
+            }
+            else
+            {
+                statusBarText.Text = "Admin GUI has been successfully opened!";
+            }
+
+            if (ListBoxReadOnly.SelectedItem == null)
+            {
+                statusBarText.Text = "Error: Cannot open Admin GUI, an item in the selectable listbox must be selected!";
+            }
+            else
+            {
+                statusBarText.Text = "Admin GUI has been successfully opened!";
+            }
+
+
+        }
         private void searchInput_TextChanged(object sender, TextChangedEventArgs e)
         {
-            filterStaff(searchInput.Text);
+            filterStaffByName(searchInput.Text);
+        }
+
+       
+
+
+        private void searchID_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            filterStaffByID(searchID.Text);
+        }
+
+        private void Grid_KeyDown(object sender, KeyEventArgs e)
+        {
+            // if Alt + A keys are pressed set GUI Open to true
+            if (Keyboard.IsKeyDown(Key.LeftAlt) && Keyboard.IsKeyDown(Key.A))
+            {
+                // call OpenGUI method
+                openGUI();
+            }
+
+            // call clearstaffName/ID methods
+            clearStaffName();
+            clearStaffID();
+        }
+
+        /*
+         * Not really part of assignment just reusing old code here, I want to make sure that for when searching for staff ID only an integer gets typed into the textbox
+         * Source for finding this code:
+         * https://stackoverflow.com/questions/1268552/how-do-i-get-a-textbox-to-only-accept-numeric-input-in-wpf
+         */
+        private void searchID_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
         }
 
         private void ListBoxReadOnly_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            // call populate textbox method
+            populateTextBox();
 
         }
-
         private void ListBoxSelectable_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            // call populate textbox method
+            populateTextBox();
         }
     }
 }

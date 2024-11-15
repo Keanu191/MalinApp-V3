@@ -53,19 +53,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\30074191\\.nuget\\packages\\": {}
+    "C:\\Users\\noawa\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\30074191\\Documents\\GitHub\\MalinAT3\\WPFQ4\\WpfApp1\\WpfApp1\\WpfApp1.csproj",
+      "projectUniqueName": "C:\\Users\\noawa\\Documents\\GitHub\\MalinAT3\\WPFQ4\\WpfApp1\\WpfApp1\\WpfApp1.csproj",
       "projectName": "WpfApp1",
-      "projectPath": "C:\\Users\\30074191\\Documents\\GitHub\\MalinAT3\\WPFQ4\\WpfApp1\\WpfApp1\\WpfApp1.csproj",
-      "packagesPath": "C:\\Users\\30074191\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\30074191\\Documents\\GitHub\\MalinAT3\\WPFQ4\\WpfApp1\\WpfApp1\\obj\\",
+      "projectPath": "C:\\Users\\noawa\\Documents\\GitHub\\MalinAT3\\WPFQ4\\WpfApp1\\WpfApp1\\WpfApp1.csproj",
+      "packagesPath": "C:\\Users\\noawa\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\noawa\\Documents\\GitHub\\MalinAT3\\WPFQ4\\WpfApp1\\WpfApp1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\30074191\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\noawa\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -121,7 +121,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
