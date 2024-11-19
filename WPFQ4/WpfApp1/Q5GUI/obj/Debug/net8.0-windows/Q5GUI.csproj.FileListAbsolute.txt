@@ -1,0 +1,4 @@
+C:\Users\noawa\Documents\GitHub\MalinAT3\WPFQ4\WpfApp1\Q5GUI\obj\Debug\net8.0-windows\AdminQ5GUI.g.cs
+C:\Users\noawa\Documents\GitHub\MalinAT3\WPFQ4\WpfApp1\Q5GUI\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\noawa\Documents\GitHub\MalinAT3\WPFQ4\WpfApp1\Q5GUI\obj\Debug\net8.0-windows\Q5GUI_MarkupCompile.cache
+C:\Users\noawa\Documents\GitHub\MalinAT3\WPFQ4\WpfApp1\Q5GUI\obj\Debug\net8.0-windows\Q5GUI_MarkupCompile.lref

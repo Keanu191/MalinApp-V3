@@ -17,7 +17,7 @@ using System.Data;
 using System.Collections.ObjectModel;
 using System.Text.RegularExpressions;
 using System.Windows.Controls.Primitives;
-
+//using Q5GUI; // import Admin GUI from question 5 into here
 
 namespace WpfApp1
 {
@@ -42,8 +42,13 @@ namespace WpfApp1
 
         }
 
-        // 4.1 Create a Dictionary data structure with a TKey of type integer and a TValue of type string, name the new data structure “MasterFile”. 
-        Dictionary<int, string> MasterFile = new Dictionary<int, string>();
+        // Update: Made the dictionary into a public static class to ensure that it can be shared with the Admin GUI to save whatever changes get made to here
+        public static class SharedDictionary
+        {
+            // 4.1 Create a Dictionary data structure with a TKey of type integer and a TValue of type string, name the new data structure “MasterFile”. 
+            public static Dictionary<int, string> MasterFile = new Dictionary<int, string>();
+        }
+       
 
         /* 12/11/2024
          * Create an observable collection to replace the dictionary itself when trying to clear items in a listbox as I get this exception relating to the ItemsSource:
@@ -76,7 +81,7 @@ namespace WpfApp1
                         string s = values[0];
                         string t = values[1];
                         // due to the dictionary being formatted of int, string, we will have to parse S to represent the integer
-                        MasterFile.Add(int.Parse(s), t);;
+                        SharedDictionary.MasterFile.Add(int.Parse(s), t);;
 
                         // display success message
                         statusBarText.Text = "The CSV file has been loaded successfully!";
@@ -102,7 +107,7 @@ namespace WpfApp1
            
 
             // Set ListBoxReadOnly Items source to masterfile as nothing will be changed there 
-            ListBoxReadOnly.ItemsSource = MasterFile;
+            ListBoxReadOnly.ItemsSource = SharedDictionary.MasterFile;
           
 
         }
@@ -124,7 +129,7 @@ namespace WpfApp1
            dictionaryDisplay.Clear();
 
             // loop through the dictionary to find matchign entires
-            foreach (var kvp in MasterFile)
+            foreach (var kvp in SharedDictionary.MasterFile)
             { 
                 // if the name in the dictionary contains whats in the search textbox then display results
                 if (kvp.Value.ToLower().Contains(staffSearch))
@@ -169,7 +174,7 @@ namespace WpfApp1
 
 
             // loop through the dictionary to find matchign entires
-            foreach (var kvp in MasterFile)
+            foreach (var kvp in SharedDictionary.MasterFile)
             {
                 // if the name in the dictionary contains whats in the search textbox then display results
                 if (kvp.Key.ToString().Contains(idSearch))
@@ -287,26 +292,107 @@ namespace WpfApp1
          * Read the appropriate criteria in the Admin GUI for further information. 
          */
 
+        // get selected Staff ID method
+        private int GetSelectedStaffId()
+        {
+            if (ListBoxReadOnly.SelectedItem is KeyValuePair<int, string> selectedItem)
+            {
+                return selectedItem.Key;
+            }
+            return 0; // Default value if nothing is selected
+        }
+
+        // get selected Staff name method
+        private string GetSelectedStaffName()
+        {
+            if (ListBoxReadOnly.SelectedItem is KeyValuePair<int, string> selectedItem)
+            {
+                return selectedItem.Value;
+            }
+            return string.Empty; // Default value if nothing is selected
+        }
+
         private void openGUI()
         {
+            // create a bool to determine whether an item in the listboxes are selected or not
+            bool itemSelected;
 
+            // if else statements for readonly listbox (1st listbox)
+            // to get intended results make sure in the future to make sure to do listBox.SelectedItem == null instead of ListBox.SelectedItem is false
             if (ListBoxReadOnly.SelectedItem == null)
             {
+                itemSelected = false;
                 statusBarText.Text = "Error: Cannot open Admin GUI, an item in the read only listbox must be selected!";
             }
             else
             {
-                statusBarText.Text = "Admin GUI has been successfully opened!";
+                itemSelected = true;
+                if (itemSelected == true)
+                {
+                    // Get the currently selected Staff ID and Staff Name
+                    var selectedStaffId = GetSelectedStaffId();
+                    var selectedStaffName = GetSelectedStaffName();
+
+                    // Determine action based on criteria
+                    // create
+                    if (selectedStaffId == 77 && string.IsNullOrWhiteSpace(selectedStaffName))
+                    {
+                        // Open Admin GUI for Create action
+                        // initalise the project reference parameters string action, int staffId, string staffName
+                        //var adminGui = new AdminGUI("Create", selectedStaffId, null);
+                        //adminGui.ShowDialog();
+                    }
+                    // update delete
+                    else
+                    {
+                        // Open Admin GUI for Update/Delete action, passing Staff ID and Name
+                        // initalise the project reference parameters string action, int staffId, string staffName
+                        //var adminGui = new AdminGUI("UpdateDelete", selectedStaffId, selectedStaffName);
+                        //adminGui.ShowDialog();
+                    }
+                    statusBarText.Text = "Admin GUI has been successfully opened!";
+                }
+                
             }
 
-            if (ListBoxReadOnly.SelectedItem == null)
+            // if else statements for selectable listbox (2nd listbox)
+
+            if (ListBoxSelectable.SelectedItem == null)
             {
+                itemSelected = false;
                 statusBarText.Text = "Error: Cannot open Admin GUI, an item in the selectable listbox must be selected!";
             }
             else
             {
-                statusBarText.Text = "Admin GUI has been successfully opened!";
+                itemSelected = true;
+                if (itemSelected == true)
+                {
+                    // Get the currently selected Staff ID and Staff Name
+                    var selectedStaffId = GetSelectedStaffId();
+                    var selectedStaffName = GetSelectedStaffName();
+
+                    // Determine action based on criteria
+                    // create
+                    if (selectedStaffId == 77 && string.IsNullOrWhiteSpace(selectedStaffName))
+                    {
+                        // Open Admin GUI for Create action
+                        // initalise the project reference parameters string action, int staffId, string staffName
+                        //var adminGui = new AdminGUI("Create", selectedStaffId, null);
+                        //adminGui.ShowDialog();
+                    }
+                    // update delete
+                    else
+                    {
+                        // Open Admin GUI for Update/Delete action, passing Staff ID and Name
+                        // initalise the project reference parameters string action, int staffId, string staffName
+                        //var adminGui = new AdminGUI("UpdateDelete", selectedStaffId, selectedStaffName);
+                        //adminGui.ShowDialog();
+                    }
+                    statusBarText.Text = "Admin GUI has been successfully opened!";
+                }
             }
+
+          
 
 
         }
