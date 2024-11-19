@@ -1,0 +1,106 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\noawa\\Documents\\GitHub\\MalinAT3\\Q4GUI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4B82362C-3AAE-49A0-8556-F6919BA40B57}|Q5AdminGUI\\Q5AdminGUI.csproj|c:\\users\\noawa\\documents\\github\\malinat3\\q4gui\\q5admingui\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B82362C-3AAE-49A0-8556-F6919BA40B57}|Q5AdminGUI\\Q5AdminGUI.csproj|solutionrelative:q5admingui\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1669C8B8-B2D9-4B15-B72B-E14003C7E2EE}|Q4GUI\\Q4GUI.csproj|c:\\users\\noawa\\documents\\github\\malinat3\\q4gui\\q4gui\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1669C8B8-B2D9-4B15-B72B-E14003C7E2EE}|Q4GUI\\Q4GUI.csproj|solutionrelative:q4gui\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B82362C-3AAE-49A0-8556-F6919BA40B57}|Q5AdminGUI\\Q5AdminGUI.csproj|c:\\users\\noawa\\documents\\github\\malinat3\\q4gui\\q5admingui\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{4B82362C-3AAE-49A0-8556-F6919BA40B57}|Q5AdminGUI\\Q5AdminGUI.csproj|solutionrelative:q5admingui\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 9,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{fb410e0a-69d1-5071-ad02-9cfa5e05aff8}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\noawa\\Documents\\GitHub\\MalinAT3\\Q4GUI\\Q5AdminGUI\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Q5AdminGUI\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\noawa\\Documents\\GitHub\\MalinAT3\\Q4GUI\\Q5AdminGUI\\MainWindow.xaml.cs",
+              "RelativeToolTip": "Q5AdminGUI\\MainWindow.xaml.cs",
+              "ViewState": "AQIAAHIAAAAAAAAAAAAAAIMAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T07:39:27.476Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\noawa\\Documents\\GitHub\\MalinAT3\\Q4GUI\\Q5AdminGUI\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Q5AdminGUI\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\noawa\\Documents\\GitHub\\MalinAT3\\Q4GUI\\Q5AdminGUI\\MainWindow.xaml",
+              "RelativeToolTip": "Q5AdminGUI\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-19T09:00:24.359Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\noawa\\Documents\\GitHub\\MalinAT3\\Q4GUI\\Q4GUI\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Q4GUI\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\noawa\\Documents\\GitHub\\MalinAT3\\Q4GUI\\Q4GUI\\MainWindow.xaml.cs",
+              "RelativeToolTip": "Q4GUI\\MainWindow.xaml.cs",
+              "ViewState": "AQIAADoBAAAAAAAAAAAAAEoBAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T06:47:28.873Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

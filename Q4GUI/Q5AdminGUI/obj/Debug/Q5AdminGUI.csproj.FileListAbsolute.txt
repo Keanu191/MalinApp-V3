@@ -1,0 +1,15 @@
+C:\Users\noawa\Documents\GitHub\MalinAT3\Q4GUI\Q5AdminGUI\obj\Debug\Q5AdminGUI.csproj.AssemblyReference.cache
+C:\Users\noawa\Documents\GitHub\MalinAT3\Q4GUI\Q5AdminGUI\obj\Debug\MainWindow.g.cs
+C:\Users\noawa\Documents\GitHub\MalinAT3\Q4GUI\Q5AdminGUI\obj\Debug\App.g.cs
+C:\Users\noawa\Documents\GitHub\MalinAT3\Q4GUI\Q5AdminGUI\obj\Debug\Q5AdminGUI_MarkupCompile.cache
+C:\Users\noawa\Documents\GitHub\MalinAT3\Q4GUI\Q5AdminGUI\obj\Debug\Q5AdminGUI_MarkupCompile.lref
+C:\Users\noawa\Documents\GitHub\MalinAT3\Q4GUI\Q5AdminGUI\bin\Debug\Q5AdminGUI.exe.config
+C:\Users\noawa\Documents\GitHub\MalinAT3\Q4GUI\Q5AdminGUI\bin\Debug\Q5AdminGUI.exe
+C:\Users\noawa\Documents\GitHub\MalinAT3\Q4GUI\Q5AdminGUI\bin\Debug\Q5AdminGUI.pdb
+C:\Users\noawa\Documents\GitHub\MalinAT3\Q4GUI\Q5AdminGUI\obj\Debug\MainWindow.baml
+C:\Users\noawa\Documents\GitHub\MalinAT3\Q4GUI\Q5AdminGUI\obj\Debug\Q5AdminGUI.g.resources
+C:\Users\noawa\Documents\GitHub\MalinAT3\Q4GUI\Q5AdminGUI\obj\Debug\Q5AdminGUI.Properties.Resources.resources
+C:\Users\noawa\Documents\GitHub\MalinAT3\Q4GUI\Q5AdminGUI\obj\Debug\Q5AdminGUI.csproj.GenerateResource.cache
+C:\Users\noawa\Documents\GitHub\MalinAT3\Q4GUI\Q5AdminGUI\obj\Debug\Q5AdminGUI.csproj.CoreCompileInputs.cache
+C:\Users\noawa\Documents\GitHub\MalinAT3\Q4GUI\Q5AdminGUI\obj\Debug\Q5AdminGUI.exe
+C:\Users\noawa\Documents\GitHub\MalinAT3\Q4GUI\Q5AdminGUI\obj\Debug\Q5AdminGUI.pdb

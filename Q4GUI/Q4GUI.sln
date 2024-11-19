@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Q4GUI", "Q4GUI\Q4GUI.csproj", "{1669C8B8-B2D9-4B15-B72B-E14003C7E2EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Q5AdminGUI", "Q5AdminGUI\Q5AdminGUI.csproj", "{4B82362C-3AAE-49A0-8556-F6919BA40B57}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1669C8B8-B2D9-4B15-B72B-E14003C7E2EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1669C8B8-B2D9-4B15-B72B-E14003C7E2EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1669C8B8-B2D9-4B15-B72B-E14003C7E2EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1669C8B8-B2D9-4B15-B72B-E14003C7E2EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B82362C-3AAE-49A0-8556-F6919BA40B57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B82362C-3AAE-49A0-8556-F6919BA40B57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B82362C-3AAE-49A0-8556-F6919BA40B57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B82362C-3AAE-49A0-8556-F6919BA40B57}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {73D9C557-2248-43CD-9505-6F61A1D6AE77}
+	EndGlobalSection
+EndGlobal
