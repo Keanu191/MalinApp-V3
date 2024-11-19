@@ -76,7 +76,14 @@ namespace Q4GUI
                         string s = values[0];
                         string t = values[1];
                         // due to the dictionary being formatted of int, string, we will have to parse S to represent the integer
-                        MasterFile.Add(int.Parse(s), t); ;
+                        try
+                        {
+                            MasterFile.Add(int.Parse(s), t);
+                        }
+                        catch (Exception ex)
+                        {
+                            statusBarText.Text = ex.Message;
+                        }
 
                         // display success message
                         statusBarText.Text = "The CSV file has been loaded successfully!";

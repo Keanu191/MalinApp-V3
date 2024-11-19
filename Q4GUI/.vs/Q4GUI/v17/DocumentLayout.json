@@ -7,11 +7,11 @@
       "RelativeMoniker": "D:0:0:{4B82362C-3AAE-49A0-8556-F6919BA40B57}|Q5AdminGUI\\Q5AdminGUI.csproj|solutionrelative:q5admingui\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1669C8B8-B2D9-4B15-B72B-E14003C7E2EE}|Q4GUI\\Q4GUI.csproj|c:\\users\\noawa\\documents\\github\\malinat3\\q4gui\\q4gui\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1669C8B8-B2D9-4B15-B72B-E14003C7E2EE}|Q4GUI\\Q4GUI.csproj|C:\\Users\\noawa\\Documents\\GitHub\\MalinAT3\\Q4GUI\\q4gui\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1669C8B8-B2D9-4B15-B72B-E14003C7E2EE}|Q4GUI\\Q4GUI.csproj|solutionrelative:q4gui\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4B82362C-3AAE-49A0-8556-F6919BA40B57}|Q5AdminGUI\\Q5AdminGUI.csproj|c:\\users\\noawa\\documents\\github\\malinat3\\q4gui\\q5admingui\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{4B82362C-3AAE-49A0-8556-F6919BA40B57}|Q5AdminGUI\\Q5AdminGUI.csproj|C:\\Users\\noawa\\Documents\\GitHub\\MalinAT3\\Q4GUI\\q5admingui\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{4B82362C-3AAE-49A0-8556-F6919BA40B57}|Q5AdminGUI\\Q5AdminGUI.csproj|solutionrelative:q5admingui\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
@@ -68,7 +68,7 @@
               "RelativeDocumentMoniker": "Q5AdminGUI\\MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\noawa\\Documents\\GitHub\\MalinAT3\\Q4GUI\\Q5AdminGUI\\MainWindow.xaml.cs",
               "RelativeToolTip": "Q5AdminGUI\\MainWindow.xaml.cs",
-              "ViewState": "AQIAAHIAAAAAAAAAAAAAAIMAAAA4AAAA",
+              "ViewState": "AQIAANoAAAAAAAAAAAAAAOoAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-19T07:39:27.476Z",
               "EditorCaption": ""
@@ -93,7 +93,7 @@
               "RelativeDocumentMoniker": "Q4GUI\\MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\noawa\\Documents\\GitHub\\MalinAT3\\Q4GUI\\Q4GUI\\MainWindow.xaml.cs",
               "RelativeToolTip": "Q4GUI\\MainWindow.xaml.cs",
-              "ViewState": "AQIAADoBAAAAAAAAAAAAAEoBAAAuAAAA",
+              "ViewState": "AQIAAPIAAAAAAAAAAAAwwAYBAABQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-19T06:47:28.873Z",
               "EditorCaption": ""

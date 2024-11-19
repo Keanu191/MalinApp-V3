@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.Eventing.Reader;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -124,7 +125,7 @@ namespace Q5AdminGUI
                       // Check if the staffId already exists in the dictionary
                       if (masterFile.ContainsKey(parsedId))
                       {
-                         MessageBox.Show("ERROR: Staff ID already exists.");
+                         //MessageBox.Show("ERROR: Staff ID already exists.");
                       }
                       else
                       {
@@ -145,12 +146,130 @@ namespace Q5AdminGUI
                       }
                                   
                 }
+            }
+
+
+        /*
+         * 5.4 Create a method that will Update the name of the current Staff ID. 
+         */
+        private void updateName(int staffId, string staffName)
+        {
+            // call retrieveStaffData method and initalise the parameters, ensure that the action is set to UpdateDelete as this is an update method
+            retrieveStaffData("UpdateDelete", staffId, staffName);
+
+
+            if (masterFile.ContainsKey(staffId))
+            {
+                masterFile[staffId] = staffName; // Update existing value
+                MessageBox.Show("Staff successfully updated!");
+                Console.WriteLine($"Updated Staff Name/ID: {staffId + staffName}");
+            }
+            else
+            {
+                Console.WriteLine($"Updated Staff Name: {staffName}");
+                MessageBox.Show("Error: cannot update");
+            }
+
+            // set the staffIDText to the staffID as a string, this cannot be edited
+            staffIDText.Text = staffId.ToString();
+            // set the staffName textbox to the staff name variable in the parameter
+            staffNameText.Text = staffName;
+        }
+
+        /*
+         * 5.5 
+         * Create a method that will Remove the current Staff ID and clear the text boxes. 
+         */
+
+        private void removeID(int staffID, string staffName)
+        {
+            // call retrieveStaffData method and initalise the parameters, ensure that the action is set to UpdateDelete as this is an delete method
+            retrieveStaffData("UpdateDelete", staffID, staffName);
+
+            if (masterFile.ContainsKey(staffID))
+            {
+                // remove the staffID from the dictionary
+                masterFile.Remove(staffID);
+
+                // clear staff name/id textboxes
+                staffNameText.Clear();
+                staffIDText.Clear();
+
+                // refocus
+                staffIDText.Focus();
+            }
+            else
+            {
+                MessageBox.Show("Error cannot delete staff!");
+            }
+        }
+
+        /*
+         * 5.6
+         * Create a method that will save changes to the csv file, this method should be called as the Admin GUI closes.
+         */
+
+        private void saveChanges()
+        {
+            // Check if the file exists
+            if (File.Exists("MalinStaffNamesV3.csv"))
+            {
+                // Open the file in append mode
+                using (StreamWriter writer = new StreamWriter("MalinStaffNamesV3.csv", true))
+                {
+                    foreach (var entry in masterFile)
+                    {
+                        writer.WriteLine($"{entry.Key},{entry.Value}");
+                        MessageBox.Show("The changes have been saved to the csv file!");
+                        return;
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("FATAL ERROR: THE CSV FILE IS NOT IN THE ADMIN GUI SOLUTION EXPLORER!!");
+            }
+        }
+
+        /*
+         * 5.7
+         * Create a method that will close the Admin GUI when the Alt + L keys are pressed
+         */
+
+        private void Window_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            // if Alt + L key is pressed
+            if (Keyboard.IsKeyDown(Key.LeftAlt) && Keyboard.IsKeyDown(Key.L))
+            {
+                // display messagebox with yes or no options
+                if (MessageBox.Show("Are you sure you want to exit the Admin GUI?", "Confirmation", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                {
+                    // call saveChanges method before closing
+                    saveChanges();
+                    // close GUI
+                    Close();
+                }
+                // call e.handled to prevent any further processing of any key strokes
+                e.Handled = true;
+            }
         }
 
         private void btnCreate_Click(object sender, RoutedEventArgs e)
+            {
+                // call create ID method when Create button is clicked
+                createNewID();
+            }
+
+        private void btnUpdate_Click(object sender, RoutedEventArgs e)
         {
-            // call create ID method when Create button is clicked
-            createNewID();
+            // call update name method
+            updateName(staffId, staffName);
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            // call remove staff id method
+            removeID(staffId, staffName);
         }
     }
     }
