@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -62,6 +63,11 @@ namespace Q4GUI
         {
             // create stream reader
             StreamReader reader = null;
+
+            // start the stopwatch before calling the ReadCSV method
+            Stopwatch stopwatch = new Stopwatch(); // create stopwatch object
+            stopwatch.Start(); // start stopwatch
+
             if (File.Exists("MalinStaffNamesV3.csv"))
             {
                 // read provided csv file
@@ -87,6 +93,11 @@ namespace Q4GUI
 
                         // display success message
                         statusBarText.Text = "The CSV file has been loaded successfully!";
+
+                        stopwatch.Stop(); // stop stopwatch
+                        TimeSpan timeTaken = stopwatch.Elapsed;
+                        // display time taken in milliseconds to load CSV
+                        Console.WriteLine($"{timeTaken.Milliseconds} MS");
                     }
                 }
             }
@@ -364,7 +375,8 @@ namespace Q4GUI
             if (ListBoxSelectable.SelectedItem == null)
             {
                 itemSelected = false;
-                statusBarText.Text = "Error: Cannot open Admin GUI, an item in the selectable listbox must be selected!";
+                // this will be displayed after the admin window closes
+                statusBarText.Text = "Exited Admin GUI Successfully, the changes have been saved!";
             }
             else
             {
@@ -416,6 +428,8 @@ namespace Q4GUI
 
         private void Grid_KeyDown(object sender, KeyEventArgs e)
         {
+            // 20/11/2024 This method has the best performance with 58% of the total CPU being used with not much RAM being used
+
             // if Alt + A keys are pressed set GUI Open to true
             if (Keyboard.IsKeyDown(Key.LeftAlt) && Keyboard.IsKeyDown(Key.A))
             {
@@ -450,5 +464,7 @@ namespace Q4GUI
             // call populate textbox method
             populateTextBox();
         }
+
+
     }
 }

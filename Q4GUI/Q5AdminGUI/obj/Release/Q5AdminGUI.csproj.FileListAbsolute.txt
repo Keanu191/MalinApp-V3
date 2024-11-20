@@ -1,0 +1,15 @@
+C:\Users\noawa\Documents\GitHub\MalinAT3\Q4GUI\Q5AdminGUI\bin\Release\Q5AdminGUI.exe.config
+C:\Users\noawa\Documents\GitHub\MalinAT3\Q4GUI\Q5AdminGUI\bin\Release\Q5AdminGUI.exe
+C:\Users\noawa\Documents\GitHub\MalinAT3\Q4GUI\Q5AdminGUI\bin\Release\Q5AdminGUI.pdb
+C:\Users\noawa\Documents\GitHub\MalinAT3\Q4GUI\Q5AdminGUI\obj\Release\Q5AdminGUI.csproj.AssemblyReference.cache
+C:\Users\noawa\Documents\GitHub\MalinAT3\Q4GUI\Q5AdminGUI\obj\Release\MainWindow.g.cs
+C:\Users\noawa\Documents\GitHub\MalinAT3\Q4GUI\Q5AdminGUI\obj\Release\App.g.cs
+C:\Users\noawa\Documents\GitHub\MalinAT3\Q4GUI\Q5AdminGUI\obj\Release\Q5AdminGUI_MarkupCompile.cache
+C:\Users\noawa\Documents\GitHub\MalinAT3\Q4GUI\Q5AdminGUI\obj\Release\Q5AdminGUI_MarkupCompile.lref
+C:\Users\noawa\Documents\GitHub\MalinAT3\Q4GUI\Q5AdminGUI\obj\Release\MainWindow.baml
+C:\Users\noawa\Documents\GitHub\MalinAT3\Q4GUI\Q5AdminGUI\obj\Release\Q5AdminGUI.g.resources
+C:\Users\noawa\Documents\GitHub\MalinAT3\Q4GUI\Q5AdminGUI\obj\Release\Q5AdminGUI.Properties.Resources.resources
+C:\Users\noawa\Documents\GitHub\MalinAT3\Q4GUI\Q5AdminGUI\obj\Release\Q5AdminGUI.csproj.GenerateResource.cache
+C:\Users\noawa\Documents\GitHub\MalinAT3\Q4GUI\Q5AdminGUI\obj\Release\Q5AdminGUI.csproj.CoreCompileInputs.cache
+C:\Users\noawa\Documents\GitHub\MalinAT3\Q4GUI\Q5AdminGUI\obj\Release\Q5AdminGUI.exe
+C:\Users\noawa\Documents\GitHub\MalinAT3\Q4GUI\Q5AdminGUI\obj\Release\Q5AdminGUI.pdb

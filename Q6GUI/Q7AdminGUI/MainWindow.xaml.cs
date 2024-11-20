@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -53,26 +54,19 @@ namespace Q7AdminGUI
             this.masterFile = MasterFile;
 
             // Call createNewID() when the window is initialized
-            //createNewID();
+            createNewID();
         }
 
         // method for making the staff ID textbox readonly
-        private void readOnlyID(bool readOnly)
+        private void readOnlyID()
         {
             /*
             * 7.1
             * Create the Admin GUI with the following settings: GUI is model, all Control Box features are removed/hidden, then add two text boxes.
             * The text box for the Staff ID should be read-only for Add, Update and Delete purposes. 
             */
-            if (readOnly == true)
-            {
-                staffIDText.IsReadOnly = true;
-                
-            }
-            else if (readOnly == false)
-            {
-                staffIDText.IsReadOnly = false;
-            }
+          
+            staffIDText.IsReadOnly = true;
 
         }
         /*
@@ -85,16 +79,8 @@ namespace Q7AdminGUI
             staffIDText.Text = staffId.ToString();
             staffNameText.Text = staffName;
 
-            // if the action equals to create, set the staffID textbox readonly to false
-            if (action == "create")
-            {
-                readOnlyID(false);
-            }
-            // if the action equals to updateDelete, set the staffID textbox readonly to false
-            else if (action == "UpdateDelete")
-            {
-                readOnlyID(true);
-            }
+            // set staffIDText to readOnly
+            readOnlyID();
         }
 
         /*
@@ -258,6 +244,29 @@ namespace Q7AdminGUI
         {
             // call remove staff id method
             removeID(staffId, staffName);
+        }
+
+        private void btnCreateMode_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Create mode enabled!");
+
+            // clear staff name/id textboxes
+            staffNameText.Clear();
+            staffIDText.Clear();
+
+            // make staff ID text editable
+            staffIDText.IsReadOnly = false;
+        }
+
+        /*
+         * Not really part of assignment just reusing old code here, I want to make sure that for when searching for staff ID only an integer gets typed into the textbox
+         * Source for finding this code:
+         * https://stackoverflow.com/questions/1268552/how-do-i-get-a-textbox-to-only-accept-numeric-input-in-wpf
+         */
+        private void staffIDText_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
         }
     }
 }

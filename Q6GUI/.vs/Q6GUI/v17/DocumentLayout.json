@@ -7,15 +7,15 @@
       "RelativeMoniker": "D:0:0:{56692236-B06F-4FC5-B40A-2BF3F10E1D73}|Q7AdminGUI\\Q7AdminGUI.csproj|solutionrelative:q7admingui\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB7044F6-6C05-4C9B-BE2A-108252C9DF54}|Q6GUI\\Q6GUI.csproj|c:\\users\\noawa\\documents\\github\\malinat3\\q6gui\\q6gui\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{CB7044F6-6C05-4C9B-BE2A-108252C9DF54}|Q6GUI\\Q6GUI.csproj|solutionrelative:q6gui\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB7044F6-6C05-4C9B-BE2A-108252C9DF54}|Q6GUI\\Q6GUI.csproj|c:\\users\\noawa\\documents\\github\\malinat3\\q6gui\\q6gui\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CB7044F6-6C05-4C9B-BE2A-108252C9DF54}|Q6GUI\\Q6GUI.csproj|C:\\Users\\noawa\\Documents\\GitHub\\MalinAT3\\Q6GUI\\q6gui\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CB7044F6-6C05-4C9B-BE2A-108252C9DF54}|Q6GUI\\Q6GUI.csproj|solutionrelative:q6gui\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{56692236-B06F-4FC5-B40A-2BF3F10E1D73}|Q7AdminGUI\\Q7AdminGUI.csproj|c:\\users\\noawa\\documents\\github\\malinat3\\q6gui\\q7admingui\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{CB7044F6-6C05-4C9B-BE2A-108252C9DF54}|Q6GUI\\Q6GUI.csproj|C:\\Users\\noawa\\Documents\\GitHub\\MalinAT3\\Q6GUI\\q6gui\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CB7044F6-6C05-4C9B-BE2A-108252C9DF54}|Q6GUI\\Q6GUI.csproj|solutionrelative:q6gui\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{56692236-B06F-4FC5-B40A-2BF3F10E1D73}|Q7AdminGUI\\Q7AdminGUI.csproj|C:\\Users\\noawa\\Documents\\GitHub\\MalinAT3\\Q6GUI\\q7admingui\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{56692236-B06F-4FC5-B40A-2BF3F10E1D73}|Q7AdminGUI\\Q7AdminGUI.csproj|solutionrelative:q7admingui\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
@@ -84,27 +84,27 @@
               "RelativeDocumentMoniker": "Q7AdminGUI\\MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\noawa\\Documents\\GitHub\\MalinAT3\\Q6GUI\\Q7AdminGUI\\MainWindow.xaml.cs",
               "RelativeToolTip": "Q7AdminGUI\\MainWindow.xaml.cs",
-              "ViewState": "AQIAAOUAAAAAAAAAAAAcwPsAAAAJAAAA",
+              "ViewState": "AQIAAJEAAAAAAAAAAAAswLAAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-20T10:41:10.415Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\noawa\\Documents\\GitHub\\MalinAT3\\Q6GUI\\Q6GUI\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "Q6GUI\\MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\noawa\\Documents\\GitHub\\MalinAT3\\Q6GUI\\Q6GUI\\MainWindow.xaml.cs",
               "RelativeToolTip": "Q6GUI\\MainWindow.xaml.cs",
-              "ViewState": "AQIAAJcBAAAAAAAAAAAcwKsBAAALAAAA",
+              "ViewState": "AQIAAHQAAAAAAAAAAAAcwKsBAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-20T10:26:32.944Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\noawa\\Documents\\GitHub\\MalinAT3\\Q6GUI\\Q6GUI\\MainWindow.xaml",
               "RelativeDocumentMoniker": "Q6GUI\\MainWindow.xaml",

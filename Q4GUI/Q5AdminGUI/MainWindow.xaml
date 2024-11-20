@@ -10,12 +10,13 @@
         PreviewKeyDown="Window_PreviewKeyDown">
     <Grid>
         <TextBox x:Name="staffNameText" HorizontalAlignment="Left" Margin="544,286,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="staffIDText" HorizontalAlignment="Left" Margin="544,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="staffIDText" HorizontalAlignment="Left" Margin="544,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" PreviewTextInput="staffIDText_PreviewTextInput"/>
         <Label Content="Staff ID:" HorizontalAlignment="Left" Margin="468,251,0,0" VerticalAlignment="Top" Width="71"/>
         <Label Content="Staff Name:" HorizontalAlignment="Left" Margin="468,282,0,0" VerticalAlignment="Top"/>
         <Label Content="Admin GUI" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="93" Width="278" FontSize="48"/>
-        <Button x:Name="btnCreate" Content="Create" HorizontalAlignment="Left" Margin="77,196,0,0" VerticalAlignment="Top" Height="49" Width="93" Click="btnCreate_Click"/>
-        <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="77,305,0,0" VerticalAlignment="Top" Height="51" Width="93" Click="btnUpdate_Click"/>
-        <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Margin="77,374,0,0" VerticalAlignment="Top" Height="52" Width="92" Click="btnDelete_Click"/>
+        <Button x:Name="btnCreate" Content="Create" HorizontalAlignment="Left" Margin="571,330,0,0" VerticalAlignment="Top" Height="50" Width="93" Click="btnCreate_Click"/>
+        <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="10,303,0,0" VerticalAlignment="Top" Height="51" Width="93" Click="btnUpdate_Click"/>
+        <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Margin="10,372,0,0" VerticalAlignment="Top" Height="52" Width="92" Click="btnDelete_Click"/>
+        <Button x:Name="btnCreateMode" Content="Create Mode" HorizontalAlignment="Left" Margin="10,237,0,0" VerticalAlignment="Top" Height="53" Width="92" Click="btnCreateMode_Click" Background="#FF22E2C3"/>
     </Grid>
 </Window>
