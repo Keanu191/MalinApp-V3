@@ -1,0 +1,21 @@
+﻿<Window x:Class="Q7AdminGUI.AdminGUI"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Q7AdminGUI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        WindowStyle="None" ResizeMode="NoResize"
+         PreviewKeyDown="Window_PreviewKeyDown">
+    <Grid>
+        <TextBox x:Name="staffNameText" HorizontalAlignment="Left" Margin="544,286,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="staffIDText" HorizontalAlignment="Left" Margin="544,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Staff ID:" HorizontalAlignment="Left" Margin="468,251,0,0" VerticalAlignment="Top" Width="71"/>
+        <Label Content="Staff Name:" HorizontalAlignment="Left" Margin="468,282,0,0" VerticalAlignment="Top"/>
+        <Label Content="Admin GUI" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="93" Width="278" FontSize="48"/>
+        <Button x:Name="btnCreate" Content="Create" HorizontalAlignment="Left" Margin="77,196,0,0" VerticalAlignment="Top" Height="49" Width="93" Click="btnCreate_Click"/>
+        <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="77,305,0,0" VerticalAlignment="Top" Height="51" Width="93" Click="btnUpdate_Click"/>
+        <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Margin="77,374,0,0" VerticalAlignment="Top" Height="52" Width="92" Click="btnDelete_Click"/>
+    </Grid>
+</Window>
